@@ -12,8 +12,8 @@ BOT_TOKEN = os.environ.get("DISCORD_BOT_TOKEN")
 
 if GEMINI_KEY:
     genai.configure(api_key=GEMINI_KEY)
-    # Correct updated model string for google-generativeai SDK
-    ai_model = genai.GenerativeModel('gemini-1.5-flash-latest')
+    # Updated to supported gemini-3.6-flash model
+    ai_model = genai.GenerativeModel('gemini-3.6-flash')
 
 app = FastAPI()
 
@@ -70,3 +70,4 @@ async def ban(ctx, member: discord.Member, *, reason=None):
 async def startup_event():
     if BOT_TOKEN:
         asyncio.create_task(bot.start(BOT_TOKEN))
+

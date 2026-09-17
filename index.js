@@ -12,7 +12,7 @@ const client = new Client({
 
 client.once('ready', () => {
     console.log(`HimalayanHub Bot is online and running live as ${client.user.tag}! 🚀`);
-    client.user.setActivity('!help | FusionHub', { type: 3 }); // Watching status
+    client.user.setActivity
 });
 
 client.on('messageCreate', async message => {

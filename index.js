@@ -1,5 +1,19 @@
-const { Client, GatewayIntentBits, PermissionsBitField, EmbedBuilder } = require('discord.js');
+        const { Client, GatewayIntentBits, PermissionsBitField, EmbedBuilder } = require('discord.js');
+const express = require('express');
 
+// Express server taaki Railway container ko active rakhe (SIGTERM se bachaye)
+const app = express();
+const PORT = process.env.PORT || 3000;
+
+app.get('/', (req, res) => {
+    res.send('HimalayanHub Bot is alive and running!');
+});
+
+app.listen(PORT, () => {
+    console.log(`Web server is running on port ${PORT}`);
+});
+
+// Discord Bot Setup
 const client = new Client({
     intents: [
         GatewayIntentBits.Guilds,

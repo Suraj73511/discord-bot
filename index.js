@@ -12,7 +12,6 @@ const client = new Client({
 
 client.once('ready', () => {
     console.log(`HimalayanHub Bot is online and running live as ${client.user.tag}! 🚀`);
-    client.user.setActivity
 });
 
 client.on('messageCreate', async message => {
@@ -144,36 +143,35 @@ client.on('messageCreate', async message => {
         handleAnimeAction(
             'slap',
             `👋 ${message.author} slapped the air!`,
-            (author, target) => `💥 **${author.username}** gave an energetic slap to **{target.username}**! Ouch! 🖐️`
+            (author, target) => `💥 **${author.username}** gave an energetic slap to **${target.username}**! Ouch! 🖐️`
         );
     }
 
     if (command === '!pat') {
         handleAnimeAction(
             'pat',
-            `pat`,
-            (author, target) => `pat **${target.username}** softly on the head! 🐾`
+            `🤗 ${message.author} patted themselves!`,
+            (author, target) => `🐾 **${author.username}** patted **${target.username}** softly on the head! ✨`
         );
     }
 
     if (command === '!cuddle') {
         handleAnimeAction(
             'cuddle',
-            `cuddle`,
-            (author, target) => `cuddle up cozy with **${target.username}**! 🥰`
+            `🥰 ${message.author} is cuddling with a pillow!`,
+            (author, target) => `🥰 **${author.username}** cuddled up cozy with **${target.username}**! ❤️`
         );
     }
 
     if (command === '!bonk') {
         handleAnimeAction(
             'bonk',
-            `bonk`,
-            (author, target) => `bonked **${target.username}** straight to horny jail! 🔨🐕`
+            `🔨 ${message.author} bonked themselves!`,
+            (author, target) => `🔨 **${author.username}** bonked **${target.username}** straight to horny jail! 🐕`
         );
     }
 });
 
-// Safety error catchers so the bot doesn't crash unexpectedly
 process.on('unhandledRejection', error => {
     console.error('Unhandled promise rejection:', error);
 });

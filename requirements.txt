@@ -1,4 +1,0 @@
-fastapi
-uvicorn
-discord.py
-google-generativeai
